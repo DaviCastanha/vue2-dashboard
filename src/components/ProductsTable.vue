@@ -31,9 +31,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in paged" :key="item.id">
+                <tr v-for="item in paginatedList" :key="item.id">
                     <td>{{ item.trackingId }}</td>
-                    <td>{{ item.product }}</td>
+                    <td>
+                        <img :src="imagesMap[item.product] || '/default-icon.png'" alt=""
+                            style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" />
+                        {{ item.product }}
+                    </td>
+
                     <td>{{ item.customer }}</td>
                     <td>{{ item.date }}</td>
                     <td>${{ Number(item.amount).toLocaleString('en-US', {
@@ -79,10 +84,24 @@ export default {
         page: 1,
         perPage: 5,
         showForm: false,
+        imagesMap: {},
         showConfirm: false,
         current: null
     }),
     computed: {
+        // filteredProducts() {
+        //     if (!this.searchTerm) return this.products;
+        //     const term = this.searchTerm.toLowerCase();
+        //     return this.products.filter(p =>
+        //         Object.values(p).some(val =>
+        //             String(val).toLowerCase().includes(term)
+        //         )
+        //     );
+        // },
+        // paginatedProducts() {
+        //     const start = (this.currentPage - 1) * this.perPage;
+        //     return this.filteredProducts.slice(start, start + this.perPage);
+        // },
         filteredList() {
             const term = this.searchTerm.trim().toLowerCase()
             if (!term) return this.list
@@ -95,13 +114,15 @@ export default {
         maxPage() {
             return Math.ceil(this.filteredList.length / this.perPage)
         },
-        paged() {
+        paginatedList() {
             const start = (this.page - 1) * this.perPage
             return this.filteredList.slice(start, start + this.perPage)
         }
     },
     created() {
         this.reload()
+        // this.fetchProducts();
+        this.loadImages();
     },
     methods: {
         reload() {
@@ -127,9 +148,23 @@ export default {
                     this.reload()
                     this.showConfirm = false
                 })
+        },
+        fetchProducts() {
+            axios.get('http://localhost:3000/products')
+                .then(res => {
+                    this.products = res.data;
+                });
+        },
+        loadImages() {
+            fetch('/data/productImages.json')
+                .then(res => res.json())
+                .then(data => {
+                    this.imagesMap = data;
+                });
         }
-    }
+    },
 }
+
 </script>
   
 <style scoped>

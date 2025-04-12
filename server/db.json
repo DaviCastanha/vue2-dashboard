@@ -119,6 +119,16 @@
       "paymentMode": "Pix",
       "status": "Canceled",
       "trackingId": "#86154"
+    },
+    {
+      "id": "a174",
+      "product": "Spinach",
+      "customer": "Popeye",
+      "date": "12/04/2025",
+      "amount": 1200.01,
+      "paymentMode": "Drug Deal",
+      "status": "Canceled",
+      "trackingId": "#56496"
     }
   ]
 }
