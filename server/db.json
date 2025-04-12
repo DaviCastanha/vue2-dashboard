@@ -129,6 +129,26 @@
       "paymentMode": "Drug Deal",
       "status": "Canceled",
       "trackingId": "#56496"
+    },
+    {
+      "id": "78c4",
+      "product": "Hat",
+      "customer": "The Mad",
+      "date": "05/12/2022",
+      "amount": 666,
+      "paymentMode": "Pix",
+      "status": "Canceled",
+      "trackingId": "#79918"
+    },
+    {
+      "id": "1e8c",
+      "product": "Laptop",
+      "customer": "",
+      "date": "11/01/2012",
+      "amount": null,
+      "paymentMode": "",
+      "status": "",
+      "trackingId": "#10168"
     }
   ]
 }
