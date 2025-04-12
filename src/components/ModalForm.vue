@@ -1,24 +1,30 @@
 <template>
     <div class="overlay">
         <form @submit.prevent="save">
-            <h3>{{ item && item.id ? 'Edit' : 'Add' }} Product</h3>
             <div>
-                <label>Product:<input v-model="form.product" /></label>
+                <label>Status:<input v-model="form.status" placeholder="Delivered" /></label>
             </div>
             <div>
-                <label>Customer:<input v-model="form.customer" /></label>
+                <label>Product:<input v-model="form.product" placeholder="Hat" /></label>
             </div>
             <div>
-                <label>Date:<input v-model="form.date" /></label>
+                <label>Customer:<input v-model="form.customer" placeholder="Matt Dickerson"/></label>
             </div>
             <div>
-                <label>Amount:<input type="number" v-model.number="form.amount" /></label>
+                <label>Date:<input v-model="form.date" placeholder="13/05/2022"/></label>
             </div>
             <div>
-                <label>Mode:<input v-model="form.paymentMode" /></label>
+                <label>Amount:
+                    <input 
+                        type="number" 
+                        v-model.number="form.amount"
+                        placeholder="$4.95"
+                        step="0.01"
+                        min="0"     
+                    /></label>
             </div>
             <div>
-                <label>Status:<input v-model="form.status" /></label>
+                <label>Mode:<input v-model="form.paymentMode" placeholder="Transfer Bank"/></label>
             </div>
             <button type="button" @click="$emit('close')">Cancel</button>
             <button type="submit">Apply</button>
@@ -37,16 +43,21 @@ export default {
                 product: '',
                 customer: '',
                 date: '',
-                amount: 0,
+                amount: null,
                 paymentMode: '',
                 status: '',
             };
     },
     methods: {
         save() {
+            // se for criação, atribui trackingId
+            if (!this.form.id) {
+                this.form.trackingId = `#${Math.floor(10000 + Math.random() * 90000)}`;
+            }
             const req = this.form.id
                 ? axios.put(`http://localhost:3000/products/${this.form.id}`, this.form)
                 : axios.post('http://localhost:3000/products', this.form);
+
             req.then(() => {
                 this.$emit('saved');
                 this.$emit('close');

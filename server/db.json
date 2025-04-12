@@ -1,184 +1,64 @@
 {
-    "products": [
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        },
-        {
-            "id": "7ba8",
-            "product": "panela",
-            "customer": "Nathynha",
-            "date": "11/04/2025",
-            "amount": 1,
-            "paymentMode": "Credit",
-            "status": "Pendent"
-        }
-    ]
+  "products": [
+    {
+      "id": "57ad",
+      "product": "OG Kush",
+      "customer": "Benji",
+      "date": "11/04/2025",
+      "amount": 21,
+      "paymentMode": "Cash on Delivery",
+      "status": "Delivered",
+      "trackingId": "#12532"
+    },
+    {
+      "id": "b731",
+      "product": "Banana",
+      "customer": "Diddy Kong",
+      "date": "11/04/2025",
+      "amount": 10,
+      "paymentMode": "Credit Card",
+      "status": "Process",
+      "trackingId": "#92834"
+    },
+    {
+      "id": "368c",
+      "product": "Pen",
+      "customer": "Pineapple",
+      "date": "11/04/2025",
+      "amount": 1.99,
+      "paymentMode": "Pix",
+      "status": "Ongoing",
+      "trackingId": "#75452"
+    },
+    {
+      "id": "78ac",
+      "product": "Bazooka",
+      "customer": "Annie Flowers",
+      "date": "01/01/2025",
+      "amount": 5350.66,
+      "paymentMode": "Moms Credit Card",
+      "status": "Tracking",
+      "trackingId": "#64349"
+    },
+    {
+      "id": "e19a",
+      "product": "Rolex",
+      "customer": "Rich Smith",
+      "date": "05/10/1995",
+      "amount": 11000000,
+      "paymentMode": "Pix",
+      "status": "Lost",
+      "trackingId": "#82159"
+    },
+    {
+      "id": "2d22",
+      "product": "Skin Oil",
+      "customer": "Henry Cavill",
+      "date": "11/04/2025",
+      "amount": 1,
+      "paymentMode": "Discord",
+      "status": "Delivered",
+      "trackingId": "#75980"
+    }
+  ]
 }

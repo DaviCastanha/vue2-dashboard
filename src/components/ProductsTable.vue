@@ -1,15 +1,31 @@
 <template>
     <div>
+        <!-- Dropdown de entradas -->
+        <div class="entries-control">
+            <label>
+                Show
+                <select v-model.number="perPage">
+                    <option :value="5">5</option>
+                    <option :value="10">10</option>
+                    <option :value="50">50</option>
+                </select>
+                entries
+            </label>
+        </div>
+
+        <!-- Botão de adicionar -->
         <button @click="openForm()">+ Add Customer</button>
+
+        <!-- Tabela de produtos/clientes -->
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Tracking ID</th>
                     <th>Product</th>
                     <th>Customer</th>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th>Mode</th>
+                    <th>Payment Mode</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -20,7 +36,7 @@
                     <td>{{ item.product }}</td>
                     <td>{{ item.customer }}</td>
                     <td>{{ item.date }}</td>
-                    <td>{{ item.amount }}</td>
+                    <td>${{ Number(item.amount).toFixed(2) }}</td>
                     <td>{{ item.paymentMode }}</td>
                     <td>{{ item.status }}</td>
                     <td>
@@ -30,12 +46,15 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Paginação -->
         <div class="pagination">
             <button @click="prev" :disabled="page === 1">Prev</button>
-            <span>{{ page }}</span>
+            <span>Page {{ page }} / {{ maxPage }}</span>
             <button @click="next" :disabled="page >= maxPage">Next</button>
         </div>
 
+        <!-- 5) Modais -->
         <ModalForm v-if="showForm" :item="current" @saved="reload" @close="showForm = false" />
         <ConfirmDialog v-if="showConfirm" @confirm="remove" @cancel="showConfirm = false" />
     </div>
@@ -45,27 +64,80 @@
 import axios from 'axios'
 import ModalForm from './ModalForm.vue'
 import ConfirmDialog from './ConfirmDialog.vue'
+
 export default {
+    props: ['searchTerm'],
     components: { ModalForm, ConfirmDialog },
-    data: () => ({ list: [], page: 1, perPage: 5, showForm: false, showConfirm: false, current: null }),
+    data: () => ({
+        list: [],
+        page: 1,
+        perPage: 5,
+        showForm: false,
+        showConfirm: false,
+        current: null
+    }),
     computed: {
-        maxPage() { return Math.ceil(this.list.length / this.perPage) },
-        paged() { const start = (this.page - 1) * this.perPage; return this.list.slice(start, start + this.perPage) }
+        filteredList() {
+            const term = this.searchTerm.trim().toLowerCase()
+            if (!term) return this.list
+            return this.list.filter(item =>
+                Object.values(item).some(val =>
+                    String(val).toLowerCase().includes(term)
+                )
+            )
+        },
+        maxPage() {
+            return Math.ceil(this.filteredList.length / this.perPage)
+        },
+        paged() {
+            const start = (this.page - 1) * this.perPage
+            return this.filteredList.slice(start, start + this.perPage)
+        }
     },
-    created() { this.reload() },
+    created() {
+        this.reload()
+    },
     methods: {
-        reload() { axios.get('http://localhost:3000/products').then(r => this.list = r.data) },
-        prev() { this.page-- }, next() { this.page++ },
-        openForm(item) { this.current = item ? { ...item } : null; this.showForm = true },
-        openConfirm(item) { this.current = item; this.showConfirm = true },
+        reload() {
+            axios.get('http://localhost:3000/products').then(r => this.list = r.data)
+        },
+        prev() {
+            this.page = Math.max(1, this.page - 1)
+        },
+        next() {
+            this.page = Math.min(this.maxPage, this.page + 1)
+        },
+        openForm(item) {
+            this.current = item ? { ...item } : null
+            this.showForm = true
+        },
+        openConfirm(item) {
+            this.current = item
+            this.showConfirm = true
+        },
         remove() {
             axios.delete(`http://localhost:3000/products/${this.current.id}`)
-            .then(() => { this.reload(); this.showConfirm = false })
+                .then(() => {
+                    this.reload()
+                    this.showConfirm = false
+                })
         }
     }
 }
 </script>
-<style scoped>table {
+  
+<style scoped>
+.entries-control {
+    margin-bottom: 8px;
+}
+
+button {
+    margin: 4px 0;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 8px;
@@ -79,11 +151,13 @@ td {
 }
 
 .pagination {
-    margin: 8px 0;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
 }
 
-button {
-    margin-right: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
-}</style>
+.pagination span {
+    margin: 0 8px;
+}
+</style>
+  
