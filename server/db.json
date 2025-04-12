@@ -109,6 +109,16 @@
       "paymentMode": "aaa",
       "status": "a",
       "trackingId": "#50929"
+    },
+    {
+      "id": "f996",
+      "product": "O reino magico",
+      "customer": "Nathynha",
+      "date": "12/04/2025",
+      "amount": 9999999999.99,
+      "paymentMode": "Pix",
+      "status": "Canceled",
+      "trackingId": "#86154"
     }
   ]
 }

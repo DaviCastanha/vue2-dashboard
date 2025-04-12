@@ -36,9 +36,15 @@
                     <td>{{ item.product }}</td>
                     <td>{{ item.customer }}</td>
                     <td>{{ item.date }}</td>
-                    <td>${{ Number(item.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}</td>
+                    <td>${{ Number(item.amount).toLocaleString('en-US', {
+                        minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}</td>
                     <td>{{ item.paymentMode }}</td>
-                    <td>{{ item.status }}</td>
+                    <td>
+                        <span :class="['status-tag', item.status.toLowerCase()]">
+                            {{ item.status }}
+                        </span>
+                    </td>
                     <td>
                         <button @click="openForm(item)">✏️</button>
                         <button @click="openConfirm(item)">🗑️</button>
@@ -158,6 +164,30 @@ td {
 
 .pagination span {
     margin: 0 8px;
+}
+
+.status-tag {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: white;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.status-tag.delivered {
+    background-color: #4caf50;
+    /* verde */
+}
+
+.status-tag.process {
+    background-color: #ff9800;
+    /* laranja */
+}
+
+.status-tag.canceled {
+    background-color: #f44336;
+    /* vermelho */
 }
 </style>
   
