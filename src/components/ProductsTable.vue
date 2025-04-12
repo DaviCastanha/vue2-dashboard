@@ -36,7 +36,7 @@
                     <td>{{ item.product }}</td>
                     <td>{{ item.customer }}</td>
                     <td>{{ item.date }}</td>
-                    <td>${{ Number(item.amount).toFixed(2) }}</td>
+                    <td>${{ Number(item.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}</td>
                     <td>{{ item.paymentMode }}</td>
                     <td>{{ item.status }}</td>
                     <td>

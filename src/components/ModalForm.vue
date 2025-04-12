@@ -8,23 +8,17 @@
                 <label>Product:<input v-model="form.product" placeholder="Hat" /></label>
             </div>
             <div>
-                <label>Customer:<input v-model="form.customer" placeholder="Matt Dickerson"/></label>
+                <label>Customer:<input v-model="form.customer" placeholder="Matt Dickerson" /></label>
             </div>
             <div>
-                <label>Date:<input v-model="form.date" placeholder="13/05/2022"/></label>
+                <label>Date:<input v-mask="'##/##/####'" v-model="form.date" placeholder="DD/MM/YYYY" /></label>
             </div>
             <div>
                 <label>Amount:
-                    <input 
-                        type="number" 
-                        v-model.number="form.amount"
-                        placeholder="$4.95"
-                        step="0.01"
-                        min="0"     
-                    /></label>
+                    <input type="number" v-model.number="form.amount" placeholder="$4.95" step="0.01" min="0" /></label>
             </div>
             <div>
-                <label>Mode:<input v-model="form.paymentMode" placeholder="Transfer Bank"/></label>
+                <label>Mode:<input v-model="form.paymentMode" placeholder="Transfer Bank" /></label>
             </div>
             <button type="button" @click="$emit('close')">Cancel</button>
             <button type="submit">Apply</button>
@@ -54,6 +48,12 @@ export default {
             if (!this.form.id) {
                 this.form.trackingId = `#${Math.floor(10000 + Math.random() * 90000)}`;
             }
+            if (!this.isValidDate(this.form.date)) {
+                alert('Data inválida. Use o formato DD/MM/AAAA.');
+                return;
+            }
+
+
             const req = this.form.id
                 ? axios.put(`http://localhost:3000/products/${this.form.id}`, this.form)
                 : axios.post('http://localhost:3000/products', this.form);
@@ -63,6 +63,16 @@ export default {
                 this.$emit('close');
             });
         },
+        isValidDate(dateStr) {
+            const [day, month, year] = dateStr.split('/').map(Number);
+            const date = new Date(year, month - 1, day);
+            return (
+                date &&
+                date.getFullYear() === year &&
+                date.getMonth() === month - 1 &&
+                date.getDate() === day
+            );
+        }
     },
 };
 </script>
