@@ -1,8 +1,8 @@
 <template>
     <div class="dashboard-layout">
-        <Sidebar />
+        <Topbar @search="searchTerm = $event" />
         <div class="main-area">
-            <Topbar @search="searchTerm = $event" />
+            <Sidebar />
             <ProductsTable :search-term="searchTerm" />
         </div>
     </div>
@@ -25,10 +25,12 @@ export default {
 <style scoped>
 .dashboard-layout {
     display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .main-area {
+    display: flex;
     flex: 1;
-    padding: 16px;
 }
 </style>

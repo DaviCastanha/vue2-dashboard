@@ -65,7 +65,7 @@
             <button @click="next" :disabled="page >= maxPage">Next</button>
         </div>
 
-        <!-- 5) Modais -->
+        <!-- Modais -->
         <ModalForm v-if="showForm" :item="current" @saved="reload" @close="showForm = false" />
         <ConfirmDialog v-if="showConfirm" @confirm="remove" @cancel="showConfirm = false" />
     </div>
@@ -89,19 +89,6 @@ export default {
         current: null
     }),
     computed: {
-        // filteredProducts() {
-        //     if (!this.searchTerm) return this.products;
-        //     const term = this.searchTerm.toLowerCase();
-        //     return this.products.filter(p =>
-        //         Object.values(p).some(val =>
-        //             String(val).toLowerCase().includes(term)
-        //         )
-        //     );
-        // },
-        // paginatedProducts() {
-        //     const start = (this.currentPage - 1) * this.perPage;
-        //     return this.filteredProducts.slice(start, start + this.perPage);
-        // },
         filteredList() {
             const term = this.searchTerm.trim().toLowerCase()
             if (!term) return this.list

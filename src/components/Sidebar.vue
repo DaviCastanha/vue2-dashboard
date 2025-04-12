@@ -13,7 +13,8 @@
     width: 200px;
     background: #f5f5f5;
     padding: 16px;
-    height: 100vh;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .sidebar h1 {
@@ -29,4 +30,5 @@
 .sidebar li {
     margin: 12px 0;
     cursor: pointer;
-}</style>
+}
+</style>

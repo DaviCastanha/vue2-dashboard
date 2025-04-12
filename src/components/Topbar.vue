@@ -8,12 +8,16 @@ export default { data: () => ({ search: '' }), watch: { search(val) { this.$emit
 </script>
 <style scoped>
 .topbar {
+    height: 61px;
+    width: 100%;
     padding: 8px 16px;
     background: #fff;
     border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
 .topbar input {
     width: 100%;
     padding: 8px;
-}</style>
+}
+</style>
