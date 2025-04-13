@@ -1,6 +1,5 @@
 <template>
     <nav class="sidebar">
-        <h1>ClarityUI</h1>
         <ul>
             <li>Dashboard</li>
             <li>Products</li>

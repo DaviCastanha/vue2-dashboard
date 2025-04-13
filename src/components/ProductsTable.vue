@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in paginatedList" :key="item.id">
+                <tr v-for="item in paginatedList" :key="item.id" class="product-line">
                     <td>{{ item.trackingId }}</td>
                     <td>
                         <img :src="imagesMap[item.product] || '/default-icon.png'" alt=""
@@ -40,7 +40,7 @@
                     </td>
 
                     <td>{{ item.customer }}</td>
-                    <td>{{ item.date }}</td>
+                    <td>{{formatDateToBr(item.date)}}</td>
                     <td>${{ Number(item.amount).toLocaleString('en-US', {
                         minimumFractionDigits: 2, maximumFractionDigits: 2
                     }) }}</td>
@@ -148,6 +148,10 @@ export default {
                 .then(data => {
                     this.imagesMap = data;
                 });
+        },
+        formatDateToBr(date) {
+            const [year, month, day] = date.split('-');
+            return `${day}/${month}/${year}`;
         }
     },
 }
@@ -169,6 +173,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 8px;
+}
+
+.product-line {
+    background-color: #F7F6FE;
+}
+.product-line:nth-child(even) {
+    background-color: #FFFFFF;
 }
 
 th,

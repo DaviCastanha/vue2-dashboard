@@ -11,7 +11,10 @@
                 <label>Customer:<input v-model="form.customer" placeholder="Matt Dickerson" /></label>
             </div>
             <div>
-                <label>Date:<input v-mask="'##/##/####'" v-model="form.date" placeholder="DD/MM/YYYY" /></label>
+                <label>Date:<input 
+                    v-model="form.date" 
+                    type="date"
+                    /></label>
             </div>
             <div>
                 <label>Amount:
@@ -64,7 +67,7 @@ export default {
             });
         },
         isValidDate(dateStr) {
-            const [day, month, year] = dateStr.split('/').map(Number);
+            const [year, month, day] = dateStr.split('-').map(Number);
             const date = new Date(year, month - 1, day);
             return (
                 date &&

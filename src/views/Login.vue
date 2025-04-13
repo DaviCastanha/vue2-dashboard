@@ -28,7 +28,7 @@ button {
 }
 </style>
 
-### 11. `src/views/Dashboard.vue` `src/views/Dashboard.vue` ```vue
+
 <template>
     <div class="dashboard-layout">
         <Sidebar />
