@@ -63,7 +63,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px; /* Espaço entre o dialog e os botões */
+    gap: 24px;
 }
 
 .dialog {
