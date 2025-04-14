@@ -45,7 +45,9 @@
 import axios from 'axios';
 export default {
     props: ['item'],
-    data: () => ({ form: {} }),
+    data: () => ({
+        form: {}
+    }),
     created() {
         this.form = this.item
             ? { ...this.item }
@@ -67,6 +69,9 @@ export default {
                 alert('Data inválida. Use o formato DD/MM/AAAA.');
                 return;
             }
+
+            // Adiciona um timestamp para ordenar no servidor ou cliente
+            this.form.createdAt = new Date().toISOString();
 
             const req = this.form.id
                 ? axios.put(`http://localhost:3000/products/${this.form.id}`, this.form)

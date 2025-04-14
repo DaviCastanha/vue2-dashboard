@@ -7,7 +7,7 @@ Vue.use(Router);
 export default new Router({
     mode: 'history',
     routes: [
-        { path: '/', redirect: '/login' },
+        { path: '/', redirect: '/products' },
         { path: '/login', component: Login },
         { path: '/products', component: Dashboard },
     ],
