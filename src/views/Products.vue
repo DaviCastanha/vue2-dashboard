@@ -119,11 +119,11 @@
 
 <script>
 import axios from 'axios';
-import ModalForm from './ModalForm.vue';
-import ConfirmDialog from './ConfirmDialog.vue';
+import ModalForm from '../components/ModalForm.vue';
+import ConfirmDialog from '../components/ConfirmDialog.vue';
+import { EventBus } from '@/eventBus';
 
 export default {
-    props: ['searchTerm'],
     components: { ModalForm, ConfirmDialog },
     data: () => ({
         list: [],
@@ -133,6 +133,7 @@ export default {
         imagesMap: {},
         showConfirm: false,
         current: null,
+        searchTerm: '',
     }),
     computed: {
         filteredList() {
@@ -156,6 +157,11 @@ export default {
         this.reload();
         // this.fetchProducts();
         this.loadImages();
+
+        // Ouve o evento do Event Bus
+        EventBus.$on('search-updated', (searchTerm) => {
+            this.searchTerm = searchTerm;
+        });
     },
     methods: {
         reload() {
@@ -226,6 +232,7 @@ export default {
     font-size: 12px;
     line-height: 100%;
     letter-spacing: 0%;
+    color: var(--primary-text);
 }
 
 .entries-control span {
@@ -237,7 +244,7 @@ export default {
 }
 
 .dropdown {
-    background-color: #e0e0e0;
+    background-color: #E0E0E0; /* Fundo do dropdown */
     width: 43px;
     height: 31px;
     border: none;
@@ -248,15 +255,15 @@ export default {
     cursor: pointer;
     /* Tirei a setinha do dropdown original aqui */
     appearance: none;
-    background-image: linear-gradient(45deg, transparent 50%, #9e9e9e 50%),
-        linear-gradient(-45deg, transparent 50%, #9e9e9e 50%);
+    background-image: linear-gradient(45deg, transparent 50%, #9E9E9E 50%),
+        linear-gradient(-45deg, transparent 50%, #9E9E9E 50%);
     background-position: right 9px center, right 5px center;
     background-size: 5px 5px;
     background-repeat: no-repeat;
 }
 
 .dropdown select {
-    background-color: #e0e0e0;
+    background-color: #E0E0E0;
     width: 43px;
     height: 31px;
     border: none;
@@ -267,8 +274,8 @@ export default {
 }
 
 .add-customer-button {
-    background-color: #624de3;
-    color: #fff;
+    background-color: #624DE3; /* Fundo do botão */
+    color: #FFFFFF; /* Texto do botão */
     width: 163px;
     height: 48px;
     border: none;
@@ -342,21 +349,35 @@ tbody tr {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--primary-bg); /* Fundo da tabela */
 }
 
 .product-line {
-    background-color: #f7f6fe;
+    background-color: var(--secondary-bg); /* Fundo alternado */
+    color: var(--primary-text);
 }
 
 .product-line:nth-child(even) {
-    background-color: #ffffff;
+    background-color: var(--primary-bg); /* Fundo de linhas pares */
+    color: var(--primary-text);
 }
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--table-text); /* Borda das células */
     padding: 8px;
     text-align: left;
+}
+
+thead {
+    border-bottom: none;
+}
+
+tbody tr {
+    border-bottom: none;
+}
+tr{
+    color: var(--primary-text);
 }
 
 .button-cell {
@@ -418,26 +439,26 @@ td {
 .pagination-page {
     width: 31px;
     height: 31px;
-    background-color: #e0e0e0;
+    background-color: var(--accent); /* Fundo do botão de paginação */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    color: #000;
+    color: var(--light-text); /* Texto do botão */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .pagination-page.active {
-    background-color: #624de3;
-    color: #fff;
+    background-color: var(--primary-btn-bg); /* Fundo do botão ativo */
+    color: var(--primary-bg); /* Texto do botão ativo */
 }
 
 .pagination-link {
     background: none;
     border: none;
-    color: #9e9e9e;
+    color: var(--light-text); /* Texto do link */
     cursor: pointer;
     text-decoration: none;
     padding: 0;
@@ -470,17 +491,32 @@ td {
 }
 
 .status-tag.delivered {
-    background-color: #ebf9f1;
-    color: #1f9254;
+    background-color: var(--delivered-bg); /* Fundo do status */
+    color: var(--delivered-text); /* Texto do status */
 }
 
 .status-tag.process {
-    background-color: #fef2e5;
-    color: #cd6200;
+    background-color: var(--process-bg); /* Fundo do status */
+    color: var(--process-text); /* Texto do status */
 }
 
 .status-tag.canceled {
-    background-color: #fbe7e8;
-    color: #a30d11;
+    background-color: var(--canceled-bg); /* Fundo do status */
+    color: var(--canceled-text); /* Texto do status */
+}
+
+.table {
+    background-color: var(--primary-bg); /* Fundo da tabela */
+    color: var(--table-text); /* Texto */
+    border: 1px solid var(--accent); /* Borda */
+}
+
+.table-header {
+    background-color: var(--neutral-bg); /* Fundo do cabeçalho */
+    color: var(--table-text); /* Texto do cabeçalho */
+}
+
+.table-row:hover {
+    background-color: var(--input-bg); /* Fundo da linha no hover */
 }
 </style>

@@ -103,14 +103,14 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3); /* Fundo translúcido */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .modal {
-    background: #fff;
+    background: var(--primary-bg); /* Fundo do modal */
     padding: 32px;
     border-radius: 8px;
     width: 615px;
@@ -119,6 +119,8 @@ export default {
     flex-direction: column;
     gap: 32px;
     box-sizing: border-box;
+    color: var(--table-text); /* Texto */
+    border: 1px solid var(--accent); /* Borda */
 }
 
 .form-fields {
@@ -141,6 +143,7 @@ export default {
     flex-direction: column;
     gap: 8px;
 }
+
 select#status {
     appearance: none;
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23888599" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
@@ -154,20 +157,20 @@ input, select {
     width: auto;
     height: 43px;
     padding: 16px 24px;
-    border: 1px solid #E1E5FE;
+    border: 1px solid var(--input-bg); /* Borda do input */
     font-size: 14px;
-    color: #888599;
-    background-color: #EEF1FF;
+    color: var(--input-text); /* Texto do input */
+    background-color: var(--neutral-bg); /* Fundo do input */
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 input::placeholder {
-    color: #888599;
+    color: var(--input-text); /* Placeholder */
 }
 
 label {
-    color: #888599;
+    color: var(--input-text); /* Texto do label */
     font-size: 14px;
     font-weight: 500;
 }
@@ -191,15 +194,15 @@ button {
     justify-content: center;
 }
 
-.cancel-button {
-    background-color: #FFFFFF;
-    border: 1px solid #D0D5DD;
-    color: #888599;
+button.cancel-button {
+    background-color: var(--primary-bg); /* Fundo do botão de cancelar */
+    border: 1px solid var(--light-btn-border); /* Borda */
+    color: var(--input-text); /* Texto */
 }
 
-.apply-button {
-    background-color: #624DE3;
-    border: 1px solid #624DE3;
-    color: #FFFFFF;
+button.apply-button {
+    background-color: var(--primary-btn-bg); /* Fundo do botão de aplicar */
+    border: 1px solid var(--primary-btn-bg); /* Borda */
+    color: var(--primary-bg); /* Texto */
 }
 </style>

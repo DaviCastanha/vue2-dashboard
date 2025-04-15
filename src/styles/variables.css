@@ -1,12 +1,57 @@
 :root {
-    --color-primary: #0066ff;
-    --color-secondary: #f5f5f5;
-    --color-accent: #14ae5c; 
-    --color-text: #333333;
-    --color-background: #ffffff;
-    --color-border: #dddddd;
-    --color-danger: #f44336;
-    --color-warning: #ff9800;
-    --color-success: #4caf50;
+    --primary-bg:#FFFFFF;
+    --secondary-bg:#F7F6FE;
+    --neutral-bg:#EEF1FF;
+    --primary-text:#000000;
+    --secondary-text:#3F3F46;
+    --light-text:#A1A1AA;
+    --table-text:#DDD;
+    --accent:#E0E0E0;
+    --primary-btn-bg:#624DE3;
+    --input-bg:#E1E5FE;
+    --input-text:#888599;
+    --hover-text:#4F46E5;
+    --delivered-bg:#EBF9F1;
+    --delivered-text:#1F9254;
+    --process-bg:#FEF2E5;
+    --process-text:#CD6200;
+    --canceled-bg:#FBE7E8;
+    --canceled-text:#A30D11;
+    --light-btn-border:#D0D5DD;
+    --light-btn-text:#344054;
+    --warning-sign-external:#fef3f2;
+    --warning-sign-internal:#fee4e2;
+    --warning-title:#101828;
+    --warning-description:#667085;
+    --badge-new:#4F46E5;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --primary-bg: #111827; /* Fundo principal mais escuro */
+    --secondary-bg: #1F2937; /* Fundo secundário mais escuro */
+    --neutral-bg: #374151; /* Fundo neutro mais escuro */
+    --primary-text: #FFFFFF; /* Texto principal claro */
+    --secondary-text: #D1D5DB; /* Texto secundário mais claro */
+    --light-text: #9CA3AF; /* Texto leve mais claro */
+    --table-text: #4B5563; /* Texto da tabela mais escuro */
+    --accent: #4B5563; /* Cor de destaque mais escura */
+    --primary-btn-bg: #4F46E5; /* Fundo do botão principal mais escuro */
+    --input-bg: #374151; /* Fundo do input mais escuro */
+    --input-text: #D1D5DB; /* Texto do input mais claro */
+    --hover-text: #A78BFA; /* Texto no hover mais claro */
+    --delivered-bg: #065F46; /* Fundo do status "delivered" mais escuro */
+    --delivered-text: #BBF7D0; /* Texto do status "delivered" mais claro */
+    --process-bg: #7C2D12; /* Fundo do status "process" mais escuro */
+    --process-text: #FEF3C7; /* Texto do status "process" mais claro */
+    --canceled-bg: #991B1B; /* Fundo do status "canceled" mais escuro */
+    --canceled-text: #FEE2E2; /* Texto do status "canceled" mais claro */
+    --light-btn-border: #4B5563; /* Borda de botões mais escura */
+    --light-btn-text: #D1D5DB; /* Texto de botões mais claro */
+    --warning-sign-external: #7C2D12; /* Fundo externo de aviso mais escuro */
+    --warning-sign-internal: #991B1B; /* Fundo interno de aviso mais escuro */
+    --warning-title: #FFFFFF; /* Título de aviso claro */
+    --warning-description: #D1D5DB; /* Descrição de aviso mais clara */
+    --badge-new:#FFFFFF;
 }
 
