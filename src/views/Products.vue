@@ -349,16 +349,16 @@ tbody tr {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--primary-bg); /* Fundo da tabela */
+    background-color: var(--primary-bg);
 }
 
 .product-line {
-    background-color: var(--secondary-bg); /* Fundo alternado */
+    background-color: var(--secondary-bg);
     color: var(--primary-text);
 }
 
 .product-line:nth-child(even) {
-    background-color: var(--primary-bg); /* Fundo de linhas pares */
+    background-color: var(--primary-bg);
     color: var(--primary-text);
 }
 

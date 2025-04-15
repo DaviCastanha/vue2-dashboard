@@ -79,19 +79,20 @@ export default {
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    background-color: var(--primary-bg); /* Fundo da topbar */
-    border-bottom: 1px solid var(--accent); /* Linha inferior */
-    color: var(--table-text); /* Texto */
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--accent);
+    color: var(--table-text);
 }
 
-/* Primeira Divisão: Logo */
 .logo-container img {
     height: auto;
     margin: 16px 0 15px 24px;
 }
+
 .dark-mode .logo-container img {
-    filter: brightness(0) invert(1); /* Aplica o filtro no dark mode */
+    filter: brightness(0) invert(1);
 }
+
 /* Segunda Divisão: Input de Busca */
 .search-container {
     display: flex;

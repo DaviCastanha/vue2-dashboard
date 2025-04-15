@@ -26,32 +26,31 @@
     --badge-new:#4F46E5;
 }
 
-/* Dark Mode Variables */
 .dark-mode {
-    --primary-bg: #111827; /* Fundo principal mais escuro */
-    --secondary-bg: #1F2937; /* Fundo secundário mais escuro */
-    --neutral-bg: #374151; /* Fundo neutro mais escuro */
-    --primary-text: #FFFFFF; /* Texto principal claro */
-    --secondary-text: #D1D5DB; /* Texto secundário mais claro */
-    --light-text: #9CA3AF; /* Texto leve mais claro */
-    --table-text: #4B5563; /* Texto da tabela mais escuro */
-    --accent: #4B5563; /* Cor de destaque mais escura */
-    --primary-btn-bg: #4F46E5; /* Fundo do botão principal mais escuro */
-    --input-bg: #374151; /* Fundo do input mais escuro */
-    --input-text: #D1D5DB; /* Texto do input mais claro */
-    --hover-text: #A78BFA; /* Texto no hover mais claro */
-    --delivered-bg: #065F46; /* Fundo do status "delivered" mais escuro */
-    --delivered-text: #BBF7D0; /* Texto do status "delivered" mais claro */
-    --process-bg: #7C2D12; /* Fundo do status "process" mais escuro */
-    --process-text: #FEF3C7; /* Texto do status "process" mais claro */
-    --canceled-bg: #991B1B; /* Fundo do status "canceled" mais escuro */
-    --canceled-text: #FEE2E2; /* Texto do status "canceled" mais claro */
-    --light-btn-border: #4B5563; /* Borda de botões mais escura */
-    --light-btn-text: #D1D5DB; /* Texto de botões mais claro */
-    --warning-sign-external: #7C2D12; /* Fundo externo de aviso mais escuro */
-    --warning-sign-internal: #991B1B; /* Fundo interno de aviso mais escuro */
-    --warning-title: #FFFFFF; /* Título de aviso claro */
-    --warning-description: #D1D5DB; /* Descrição de aviso mais clara */
+    --primary-bg: #111827;
+    --secondary-bg: #1F2937;
+    --neutral-bg: #374151;
+    --primary-text: #FFFFFF;
+    --secondary-text: #D1D5DB;
+    --light-text: #9CA3AF;
+    --table-text: #4B5563;
+    --accent: #4B5563;
+    --primary-btn-bg: #4F46E5;
+    --input-bg: #374151;
+    --input-text: #D1D5DB;
+    --hover-text: #A78BFA;
+    --delivered-bg: #065F46;
+    --delivered-text: #BBF7D0;
+    --process-bg: #7C2D12;
+    --process-text: #FEF3C7;
+    --canceled-bg: #991B1B;
+    --canceled-text: #FEE2E2;
+    --light-btn-border: #4B5563;
+    --light-btn-text: #D1D5DB;
+    --warning-sign-external: #7C2D12;
+    --warning-sign-internal: #991B1B;
+    --warning-title: #FFFFFF;
+    --warning-description: #D1D5DB;
     --badge-new:#FFFFFF;
 }
 

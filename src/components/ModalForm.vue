@@ -110,17 +110,17 @@ export default {
 }
 
 .modal {
-    background: var(--primary-bg); /* Fundo do modal */
+    background: var(--primary-bg);
     padding: 32px;
     border-radius: 8px;
     width: 615px;
-    height: 588px; /* Ajustei pra consertar um label do figma que está quebrado (Customer) */
+    height: 588px;
     display: flex;
     flex-direction: column;
     gap: 32px;
     box-sizing: border-box;
-    color: var(--table-text); /* Texto */
-    border: 1px solid var(--accent); /* Borda */
+    color: var(--table-text);
+    border: 1px solid var(--accent);
 }
 
 .form-fields {

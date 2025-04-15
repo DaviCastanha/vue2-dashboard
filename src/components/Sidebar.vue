@@ -234,12 +234,12 @@ export default {
 
 .section-item .badge {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
     width: 18px;
     height: 18px;
-    background-color: var(--primary-btn-bg); /* Fundo da badge */
-    color: white; /* Texto da badge */
+    background-color: var(--primary-btn-bg);
+    color: white;
     font-size: 11px;
     border-radius: 50%;
     margin-left: auto;
@@ -251,10 +251,10 @@ export default {
     align-items: center;
     width: 32px;
     height: 18px;
-    background-color: var(--secondary-bg); /* Fundo da badge "NEW" */
-    color: var(--badge-new); /* Texto da badge "NEW" */
+    background-color: var(--secondary-bg);
+    color: var(--badge-new);
     font-size: 10px;
-    border: 1px solid var(--primary-btn-bg); /* Borda da badge "NEW" */
+    border: 1px solid var(--primary-btn-bg);
     border-radius: 35.71px;
     margin-left: auto;
 }
