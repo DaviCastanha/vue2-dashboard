@@ -6,8 +6,8 @@
                 <span>Show</span>
                 <select class="dropdown" v-model.number="perPage">
                     <option :value="5">5</option>
+                    <option :value="7">7</option>
                     <option :value="10">10</option>
-                    <option :value="50">50</option>
                 </select>
                 <span>entries</span>
             </div>
