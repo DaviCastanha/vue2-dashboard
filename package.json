@@ -7,15 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "start": "node server.js"
-=======
+    "start": "node server.js",
     "json-server": "json-server --watch server/db.json --port 3000"
->>>>>>> parent of 13d6dd7 (Variáveis de ambiente)
-=======
-    "json-server": "json-server --watch server/db.json --port 3000"
->>>>>>> parent of 13d6dd7 (Variáveis de ambiente)
+
   },
   "keywords": [],
   "author": "",
