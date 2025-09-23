@@ -74,8 +74,8 @@ export default {
             this.form.createdAt = new Date().toISOString();
 
             const req = this.form.id
-                ? axios.put(`${process.env.VUE_APP_API_URL}/products/${this.form.id}`, this.form)
-                : axios.post(`${process.env.VUE_APP_API_URL}/products`, this.form);
+                ? axios.put(`http://localhost:3000/products/${this.form.id}`, this.form)
+                : axios.post('http://localhost:3000/products', this.form);
 
             req.then(() => {
                 this.$emit('saved');
