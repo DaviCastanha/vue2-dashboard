@@ -166,7 +166,7 @@ export default {
     methods: {
         reload() {
             axios
-                .get('http://localhost:3000/products')
+                .get(`${process.env.VUE_APP_API_URL}/products`)
                 .then((r) => (this.list = r.data));
         },
         prev() {
@@ -185,14 +185,14 @@ export default {
         },
         remove() {
             axios
-                .delete(`http://localhost:3000/products/${this.current.id}`)
+                .delete(`${process.env.VUE_APP_API_URL}/products/${this.current.id}`)
                 .then(() => {
                     this.reload();
                     this.showConfirm = false;
                 });
         },
         fetchProducts() {
-            axios.get('http://localhost:3000/products').then((res) => {
+            axios.get(`${process.env.VUE_APP_API_URL}/products`).then((res) => {
                 this.products = res.data;
             });
         },
