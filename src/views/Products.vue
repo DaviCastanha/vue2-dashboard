@@ -122,6 +122,7 @@ import axios from 'axios';
 import ModalForm from '../components/ModalForm.vue';
 import ConfirmDialog from '../components/ConfirmDialog.vue';
 import { EventBus } from '@/eventBus';
+import  api  from '../api';
 
 export default {
     components: { ModalForm, ConfirmDialog },
