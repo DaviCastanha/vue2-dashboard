@@ -165,8 +165,8 @@ export default {
     },
     methods: {
         reload() {
-            axios
-                .get('http://localhost:3000/products')
+            api
+                .get('/products')
                 .then((r) => (this.list = r.data));
         },
         prev() {
@@ -184,15 +184,15 @@ export default {
             this.showConfirm = true;
         },
         remove() {
-            axios
-                .delete(`http://localhost:3000/products/${this.current.id}`)
+            api
+                .delete(`/products/${this.current.id}`)
                 .then(() => {
                     this.reload();
                     this.showConfirm = false;
                 });
         },
         fetchProducts() {
-            axios.get('http://localhost:3000/products').then((res) => {
+            api.get('/products').then((res) => {
                 this.products = res.data;
             });
         },

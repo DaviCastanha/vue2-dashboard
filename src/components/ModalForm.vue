@@ -43,6 +43,7 @@
 
 <script>
 import axios from 'axios';
+import api from '../api';
 export default {
     props: ['item'],
     data: () => ({
@@ -74,8 +75,8 @@ export default {
             this.form.createdAt = new Date().toISOString();
 
             const req = this.form.id
-                ? axios.put(`http://localhost:3000/products/${this.form.id}`, this.form)
-                : axios.post('http://localhost:3000/products', this.form);
+                ? api.put(`/products/${this.form.id}`, this.form)
+                : api.post('/products', this.form);
 
             req.then(() => {
                 this.$emit('saved');
