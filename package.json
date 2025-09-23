@@ -19,10 +19,10 @@
     "vue-router": "^3.5.3",
     "vue-the-mask": "^0.11.1",
     "vue-toast-notification": "^1.0.1",
+    "@vue/cli-service": "^4.5.0",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.5.0",
     "vue-template-compiler": "^2.6.14"
   }
 }
