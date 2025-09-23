@@ -18,6 +18,7 @@
     "axios": "^1.8.4",
     "browserslist": "^4.26.2",
     "caniuse-lite": "^1.0.30001743",
+    "cors": "^2.8.5",
     "json-server": "^0.17.4",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
