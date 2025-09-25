@@ -17,7 +17,7 @@
     .dashboard-texts {
         display: flex;
         flex-direction: column;
-        align-items: center ;
+        text-align: justify;
     }
     h1 {
         color: rgb(159, 0, 0);
@@ -28,7 +28,7 @@
         color: #3F3F46;
         margin-left: 30px;
         margin-bottom: 10px;
-        max-width: 80%;
         font-size: 20px;
+        max-width: 90%;
     }
 </style>
