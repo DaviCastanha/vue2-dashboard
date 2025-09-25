@@ -1,3 +1,21 @@
+## Introdução
+
+Bem-vindo ao desafio técnico! Este projeto foi desenvolvido para avaliar habilidades em Vue.js, CSS puro e boas práticas de desenvolvimento. O objetivo foi criar uma dashboard fiel ao design disponibilizado no Figma, garantindo qualidade, interatividade e um código bem estruturado.
+
+O projeto foi hospedado pela vercel neste link: [Dashboard Vue2](https://vue2-dashboard.vercel.app/dashboard)
+
+É necessário aguardar até 50 segundos para que o Render hospede o backend devidamente e o endpoint '/products' funcione corretamente.
+
+---
+
+## Descrição do Desafio
+
+O desafio consistiu em desenvolver uma dashboard baseada no design fornecido no Figma. A tarefa incluiu a criação de componentes reutilizáveis, rotas, uma API fake para simular métodos HTTP e a implementação de funcionalidades como paginação e filtro de itens por página.
+
+**Link do Figma:**  
+[Design no Figma](https://www.figma.com/design/MY0oUHkutSQkxqQCIGuwrx/Teste-T%C3%A9cnico-%7C-Front-End?node-id=0-1&m=dev&t=73xLTQ1HDiQfeS9C-1)
+
+---
 **Desafio Técnico - Desenvolvedor Front-end Pleno**
 
 ## Como Rodar o Projeto Localmente
@@ -62,20 +80,6 @@ Este projeto foi desenvolvido com foco nos seguintes critérios:
 ### Modo Dark
 ![Modo Dark](public/assets/darkmode.png)
 
-## Introdução
-
-Bem-vindo ao desafio técnico! Este projeto foi desenvolvido para avaliar habilidades em Vue.js, CSS puro e boas práticas de desenvolvimento. O objetivo foi criar uma dashboard fiel ao design disponibilizado no Figma, garantindo qualidade, interatividade e um código bem estruturado.
-
----
-
-## Descrição do Desafio
-
-O desafio consistiu em desenvolver uma dashboard baseada no design fornecido no Figma. A tarefa incluiu a criação de componentes reutilizáveis, rotas, uma API fake para simular métodos HTTP e a implementação de funcionalidades como paginação e filtro de itens por página.
-
-**Link do Figma:**  
-[Design no Figma](https://www.figma.com/design/MY0oUHkutSQkxqQCIGuwrx/Teste-T%C3%A9cnico-%7C-Front-End?node-id=0-1&m=dev&t=73xLTQ1HDiQfeS9C-1)
-
----
 
 ## Funcionalidades Implementadas
 
